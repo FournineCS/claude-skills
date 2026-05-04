@@ -16,7 +16,7 @@ Skills live in `~/.claude/skills/`. Install one by copying or symlinking it:
 
 ```bash
 # Clone the repo
-git clone https://github.com/<your-fork>/claude-skills.git
+git clone https://github.com/FournineCS/claude-skills.git
 cd claude-skills
 
 # Symlink a skill (recommended — get updates with git pull)
