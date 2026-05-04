@@ -1,0 +1,35 @@
+{
+  "skill_name": "mac-cleanup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "My Mac is almost out of disk space. I have about 8 GB left on a 512 GB drive. Can you help me figure out what's eating all the space and clean things up?",
+      "expected_output": "Should run the analyzer script, produce a structured report with Critical/Warning/Info sections, show total recoverable space estimate with top 5 quick wins, then offer category-by-category cleanup with confirmation prompts.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I want to clean up my Homebrew and Xcode junk. Don't touch anything else.",
+      "expected_output": "Should still run full analysis for context but focus cleanup offers on Homebrew (cleanup, autoremove) and Xcode (DerivedData, Archives, Simulators). Should show dry-run output for brew commands. Should ask for confirmation before each action.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Can you do a health check on my Mac? I just want to see a report, don't delete anything.",
+      "expected_output": "Should run full analysis and produce the complete report. Should NOT offer to delete or clean anything unless the user later asks. The report should be informational only.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I uninstalled a bunch of apps last month by dragging them to trash. Can you find any leftover files from those apps and help me remove them?",
+      "expected_output": "Should focus on orphaned app detection. Should compare bundle IDs in Library subdirectories against installed apps. Should present findings with sizes and ask before removing each orphaned directory.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "What are these launch agents on my Mac? Some of them look suspicious. Also clean up any Docker stuff taking space.",
+      "expected_output": "Should list all launch agents and daemons with their labels and executable paths. Should flag any that look unusual. For Docker, should show docker system df, list images and containers, and offer cleanup with confirmation.",
+      "files": []
+    }
+  ]
+}
